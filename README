@@ -1,0 +1,38 @@
+Ciobanu Alin-Matei 325CB
+
+	Arhiva contine 5 fisiere .java:
+
+	Clasa DeviceT:
+	- are ca parametrii temperatura si ora la care s-a inregistrat temperatura
+
+	Clasa DeviceH:
+	- are ca parametrii umiditatea si ora la care s-a inregistrat umiditatea
+
+	Clasa Room:
+	- contine numele camerei, id-ul device-ului si suprafata camerei
+	- contine un vector de arraylist de DeviceT si un vector de arraylist de DeviceH
+	- ideea e ca am un vector de ore in care stochez temperaturile/ umiditatile pe intervale orare
+
+	Clasa House:
+	- contine numarul de camere, temperatura globala, umiditatea glonala, timpul de referinta,
+	un parametru isH care imi spune daca se ia in considerare umiditatea
+	- contine un arraylist de camere
+	- metoda addRoom adauga o camera in vector
+	- metoda addTemperature adauga o temperatura inregistrata de senzorul unei camere si o pune
+	pe pozitia din vector in functie de ora la care s-a inregistrat
+	- pozitia o calculez astfel: fac diferenta intre timupl de referinta si timpul la care s-a
+	inregistrat temperatura si impart la 3600 pt a afla ora, apoi din 24 scad ora si iau partea
+	intreaga care reprezinta pozitia (intervalul orar)
+	- introduc temperatura astfel incat sa am temperaturile sortate crescator in intervalul orar
+	- metoda addHumidity: la fel
+	- metoda triggerHeat: fac media ponderata a celor mai mici temperaturi din ultimul interval 
+orar la care s-a inregistrat o temperatura din fiecare camera. Daca am umiditate fac media ponderata
+a celor mai mari umiditati din ultimul interval orar la care s-a inregistrat o umiditate din fiecare
+camera
+ 	- metoda list: afisez timpii din camera data intre intervalele specificate
+
+	Clasa Main:
+	- instantiez un element din clasa House
+	- citesc prima linie sa vad cate argumente pentru a sti daca se ia in considerare
+umiditatea sau nu
+	- citesc restul liniilor si apelez metodele din clasa House
